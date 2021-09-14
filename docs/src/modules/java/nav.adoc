@@ -13,5 +13,6 @@
 *** xref:java:views.adoc[Implementing Views]
 *** xref:java:side-effects.adoc[Running Side Effects]
 *** xref:java:serialization.adoc[Handling Serialization]
+*** xref:call-another-as-service.adoc[Calling other Akka Serverless services]
 *** xref:java:run-locally.adoc[Running a service locally]
 *** xref:java:api.adoc[Java API docs]
