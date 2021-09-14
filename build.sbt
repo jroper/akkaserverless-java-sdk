@@ -76,7 +76,7 @@ lazy val sdkJava = project
 
 lazy val sdkScala = project
   .in(file("sdk/scala-sdk"))
-  .dependsOn(sdkCore)
+  .dependsOn(sdkJava)
   .enablePlugins(AkkaGrpcPlugin, BuildInfoPlugin, PublishSonatype)
   .settings(
     name := "akkaserverless-scala-sdk",
