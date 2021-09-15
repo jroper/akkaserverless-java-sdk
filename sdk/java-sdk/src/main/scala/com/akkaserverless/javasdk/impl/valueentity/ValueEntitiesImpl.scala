@@ -205,21 +205,17 @@ final class ValueEntitiesImpl(
       }
   }
 
-  private trait AbstractContext extends ValueEntityContext {
-    override def serviceCallFactory(): ServiceCallFactory = rootContext.serviceCallFactory()
-  }
-
   private final class CommandContextImpl(
       override val entityId: String,
       override val commandName: String,
       override val commandId: Long,
       override val metadata: Metadata)
-      extends CommandContext
-      with AbstractContext
+      extends AbstractContext(rootContext.serviceCallFactory(), system)
+      with CommandContext
       with ActivatableContext
 
   private final class ValueEntityContextImpl(override val entityId: String)
-      extends ValueEntityContext
-      with AbstractContext
+      extends AbstractContext(rootContext.serviceCallFactory(), system)
+      with ValueEntityContext
 
 }
